@@ -986,10 +986,7 @@ pre .javascript .function {
   transition-delay: 0s;
   transition-duration: 0.2s;
   transition-timing-function: ease-in-out;
-  width: 24px;
-}
-.back-to-top span {
-  display: none;
+  width: initial;
 }
 .back-to-top:hover {
   color: #fc6423;
@@ -1130,6 +1127,16 @@ pre .javascript .function {
 }
 .use-motion .menu-item {
   opacity: 0;
+}
+.post-body p a {
+  color: #ffb206;
+  border-bottom: none;
+  border-bottom: 1px solid #ffb206;
+}
+.post-body p a:hover {
+  color: #929292;
+  border-bottom: none;
+  border-bottom: 1px solid #929292;
 }
 .post-body {
   overflow-wrap: break-word;
@@ -1646,6 +1653,7 @@ article:last-child .post-eof {
   margin: 0 auto;
   max-width: 120px;
   padding: 2px;
+  border-radius: 50%;
 }
 .site-author-name {
   color: #222;
@@ -1673,7 +1681,7 @@ article:last-child .post-eof {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #b5f6ff;
+  background: #faff22;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
