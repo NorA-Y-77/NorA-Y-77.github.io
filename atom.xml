@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-09-30T04:04:05.679Z</updated>
+  <updated>2019-09-30T12:15:29.692Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Python -- schedule模块</title>
+    <link href="http://yoursite.com/2019/09/30/Python-schedule%E6%A8%A1%E5%9D%97/"/>
+    <id>http://yoursite.com/2019/09/30/Python-schedule模块/</id>
+    <published>2019-09-30T11:53:23.000Z</published>
+    <updated>2019-09-30T12:15:29.692Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Schedule-模块"><a href="#Schedule-模块" class="headerlink" title="Schedule 模块"></a>Schedule 模块</h1><p>Schedule 模块可以用来实现程序的定时功能，即在特定时间完成某个功能。</p><p>Python 中有两个内置的标准库 <code>time</code> 和 <code>datetime</code> 可以用来实现同样功能，但代码会比较复杂，使用 <code>Schedule</code> 模块可简化代码。</p><p>详细使用方法参见 <a href="https://schedule.readthedocs.io/en/stable/" target="_blank" rel="noopener">官方文档</a><br>这里只粗略介绍</p><p>与任何第三方库相同，在python中调用前需安装该库。</p><a id="more"></a><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install schedule</span><br></pre></td></tr></table></figure><p>使用 import 语句调用</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">import schedule</span><br><span class="line">import time #调用time模块进行自检</span><br></pre></td></tr></table></figure><p>以官方文档案例为例</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">import schedule</span><br><span class="line">import time</span><br><span class="line">def job():</span><br><span class="line">    print(&quot;I&apos;m working...&quot;)</span><br><span class="line"># 定义一个函数 job , 功能为打印字符串</span><br><span class="line"></span><br><span class="line">schedule.every(10).minutes.do(job)      #部署每10分钟执行一次 job() 函数</span><br><span class="line">schedule.every().hour.do(job)       # 部署每x小时执行一次 job() 函数</span><br><span class="line">schedule.every().day.at(&quot;10:30&quot;).do(job)        # 部署在每天10：30执行 job() 函数</span><br><span class="line">schedule.every().monday.do(job)     # 部署每个星期一执行 job() 函数</span><br><span class="line">schedule.every().wednesday.at(&quot;10:30&quot;).do(job)      # 部署每周三的10：30执行一次 job() 函数</span><br><span class="line"></span><br><span class="line">while True:</span><br><span class="line">    schedule.run_pending()</span><br><span class="line">    time.sleep(1)</span><br><span class="line">    # 检查部署的情况（每间隔1秒），如果任务准备就绪，就开始执行任务</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;Schedule-模块&quot;&gt;&lt;a href=&quot;#Schedule-模块&quot; class=&quot;headerlink&quot; title=&quot;Schedule 模块&quot;&gt;&lt;/a&gt;Schedule 模块&lt;/h1&gt;&lt;p&gt;Schedule 模块可以用来实现程序的定时功能，即在特定时间完成某个功能。&lt;/p&gt;&lt;p&gt;Python 中有两个内置的标准库 &lt;code&gt;time&lt;/code&gt; 和 &lt;code&gt;datetime&lt;/code&gt; 可以用来实现同样功能，但代码会比较复杂，使用 &lt;code&gt;Schedule&lt;/code&gt; 模块可简化代码。&lt;/p&gt;&lt;p&gt;详细使用方法参见 &lt;a href=&quot;https://schedule.readthedocs.io/en/stable/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;官方文档&lt;/a&gt;&lt;br&gt;这里只粗略介绍&lt;/p&gt;&lt;p&gt;与任何第三方库相同，在python中调用前需安装该库。&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="Python" scheme="http://yoursite.com/tags/Python/"/>
+    
+  </entry>
   
   <entry>
     <title>这是一篇测试文章</title>
