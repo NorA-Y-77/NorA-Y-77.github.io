@@ -56,14 +56,14 @@
 </script>
 
   <meta name="description" content="Scrapy 框架基本介绍 Scrapy 是一个为了爬取网站数据，提取结构性数据而编写的应用框架。可以应用在包括数据挖掘，信息处理或储存历史数据等一系列的程序中。 基本的 Scrapy 框架由以下几部分组成：Scrapy Engine 引擎Spiders 爬虫Scheduler 调度器Downloader 下载器">
-<meta name="keywords" content="爬虫,Python,Scrapy">
+<meta name="keywords" content="Python,爬虫,Scrapy">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Scrapy 爬虫框架学习 (一)">
 <meta property="og:url" content="http://yoursite.com/2019/10/21/Scrapy爬虫框架学习-一/index.html">
 <meta property="og:site_name" content="Station7">
 <meta property="og:description" content="Scrapy 框架基本介绍 Scrapy 是一个为了爬取网站数据，提取结构性数据而编写的应用框架。可以应用在包括数据挖掘，信息处理或储存历史数据等一系列的程序中。 基本的 Scrapy 框架由以下几部分组成：Scrapy Engine 引擎Spiders 爬虫Scheduler 调度器Downloader 下载器">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-10-21T10:50:41.706Z">
+<meta property="og:updated_time" content="2019-10-21T11:47:05.270Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Scrapy 爬虫框架学习 (一)">
 <meta name="twitter:description" content="Scrapy 框架基本介绍 Scrapy 是一个为了爬取网站数据，提取结构性数据而编写的应用框架。可以应用在包括数据挖掘，信息处理或储存历史数据等一系列的程序中。 基本的 Scrapy 框架由以下几部分组成：Scrapy Engine 引擎Spiders 爬虫Scheduler 调度器Downloader 下载器">
@@ -288,7 +288,7 @@
                 
               
 
-              <time title="创建时间：2019-10-21 16:39:44 / 修改时间：18:50:41" itemprop="dateCreated datePublished" datetime="2019-10-21T16:39:44+08:00">2019-10-21</time>
+              <time title="创建时间：2019-10-21 16:39:44 / 修改时间：19:47:05" itemprop="dateCreated datePublished" datetime="2019-10-21T16:39:44+08:00">2019-10-21</time>
             </span>
           
             
@@ -331,15 +331,15 @@
 <p>Item Pipeline 数据管道</p>
 <p>Downloader Middlewares 下载中间件</p>
 <p>Spider Middlewares 爬虫中间件</p>
-<p>** 基本的运行流程 **：</p>
-<p>爬虫开始运行时，<strong><code>Spider</code> 会将输入的 <code>url</code> 请求打包为 <code>Requests</code> 对象发送给引擎 **。引擎将接收到的 <code>Requests</code> 对象发送给调度器，调度器将获取到的一个或数个请求进行排序并返回给引擎。之后引擎将打包排序好的请求发送给下载器，下载器根据请求中的 <code>url</code> 访问相应的页面并获取 <code>Responses</code> 对象，返回给引擎。</strong> 引擎再将返回的 <code>Responses</code> 对象发送给 <code>Spiders</code> 进行进一步处理为 Items 对象 **。最后再经过引擎向数据管道发送 <code>Items</code> 对象（所需数据），由数据管道将这些经过处理的数据存入文件。</p>
-<h2 id="安装-Scrapy"><a href="#安装-Scrapy" class="headerlink" title="安装 Scrapy"></a>安装 Scrapy</h2><p>Scrapy 的安装十分简单，使用 pip 安装即可。<br><font color="#F08080" size="3">** 在 cmd 中 **</font>：</p>
+<p><strong>基本的运行流程</strong>：</p>
+<p>爬虫开始运行时，<strong><code>Spider</code> 会将输入的 <code>url</code> 请求打包为 <code>Requests</code> 对象发送给引擎</strong>。引擎将接收到的 <code>Requests</code> 对象发送给调度器，调度器将获取到的一个或数个请求进行排序并返回给引擎。之后引擎将打包排序好的请求发送给下载器，下载器根据请求中的 <code>url</code> 访问相应的页面并获取 <code>Responses</code> 对象，返回给引擎。<strong>引擎再将返回的 <code>Responses</code> 对象发送给 <code>Spiders</code> 进行进一步处理为 Items 对象</strong>。最后再经过引擎向数据管道发送 <code>Items</code> 对象（所需数据），由数据管道将这些经过处理的数据存入文件。</p>
+<h2 id="安装-Scrapy"><a href="#安装-Scrapy" class="headerlink" title="安装 Scrapy"></a>安装 Scrapy</h2><p>Scrapy 的安装十分简单，使用 pip 安装即可。<br><font color="#F08080" size="3"><strong>在 cmd 中</strong></font>：</p>
 <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install scrapy</span><br></pre></td></tr></table></figure>
 
-<h2 id="创建-Scrapy-项目"><a href="#创建-Scrapy-项目" class="headerlink" title="创建 Scrapy 项目"></a>创建 Scrapy 项目</h2><p>如同安装 scrapy 一样，scrapy 的项目创建也非常简单。<font color="#F08080" size="3">** 在需要创建 Scrapy 项目的目录下在 cmd 中输入 **</font>：(test 可为任意项目名)</p>
+<h2 id="创建-Scrapy-项目"><a href="#创建-Scrapy-项目" class="headerlink" title="创建 Scrapy 项目"></a>创建 Scrapy 项目</h2><p>如同安装 scrapy 一样，scrapy 的项目创建也非常简单。<font color="#F08080" size="3"><strong>在需要创建 Scrapy 项目的目录下在 cmd 中输入</strong></font>：(test 可为任意项目名)</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scrapy startproject test_1</span><br></pre></td></tr></table></figure>
 
-<p>当看到该目录下出现项目名同名文件夹即说明项目 &lt; font color=#F08080 size=3&gt;** 创建成功 **</p>
+<p>当看到该目录下出现项目名同名文件夹即说明项目 &lt; font color=#F08080 size=3&gt;<strong>创建成功</strong></p>
 
     </div>
 
@@ -355,7 +355,11 @@
           
           <div class="post-tags">
             
-              <a href="/tags/爬虫-Python-Scrapy/" rel="tag"># 爬虫,Python,Scrapy</a>
+              <a href="/tags/Python/" rel="tag"># Python</a>
+            
+              <a href="/tags/爬虫/" rel="tag"># 爬虫</a>
+            
+              <a href="/tags/Scrapy/" rel="tag"># Scrapy</a>
             
           </div>
         
@@ -476,7 +480,9 @@
         
           
         
-        <span class="site-state-item-count">2</span>
+          
+        
+        <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">标签</span>
         </a>
       </div>
